@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MailMessageOptions.cs" />
+    <Compile Include="SmtpClientConfigurations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendEmail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

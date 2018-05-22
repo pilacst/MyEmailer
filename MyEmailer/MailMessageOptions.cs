@@ -3,7 +3,6 @@ using System.Net.Mail;
 
 namespace MyEmailer
 {
-
     /// <summary>
     /// Email options.
     /// </summary>
@@ -34,5 +33,10 @@ namespace MyEmailer
         /// Gets or sets all the recipients of the email.
         /// </summary>
         public IList<string> To { get; set; }
+
+        /// <summary>
+        /// Gets or sets if the message body is HTML.
+        /// </summary>
+        public bool IsBodyHtml { get; set; }
     }
 }

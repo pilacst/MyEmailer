@@ -18,7 +18,7 @@ namespace MyEmailer
         public int PortNumber { get; set; }
 
         /// <summary>
-        /// Gets or sets the email template path.
+        /// Gets or sets the email template files path.
         /// </summary>
         public string TemplateFolder { get; set; }
 
@@ -40,11 +40,6 @@ namespace MyEmailer
         /// <summary>
         /// Gets or sets EnableSsl option.
         /// </summary>
-        public SmtpDeliveryMethod EnableSsl { get; set; }
-
-        /// <summary>
-        /// Gets or sets if the message body is HTML.
-        /// </summary>
-        public bool IsBodyHtml { get; set; }
+        public bool EnableSsl { get; set; }
     }
 }

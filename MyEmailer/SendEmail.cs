@@ -18,7 +18,7 @@ namespace MyEmailer
                     mail.From = new MailAddress(options.From);
                     mail.Subject = options.Subject;
                     mail.Body = options.Body;
-                    mail.IsBodyHtml = configurations.IsBodyHtml;
+                    mail.IsBodyHtml = options.IsBodyHtml;
                     foreach (var toEmail in options.To)
                     {
                         mail.To.Add(toEmail);
@@ -26,23 +26,23 @@ namespace MyEmailer
 
                     using (SmtpClient smtp = new SmtpClient(configurations.SmtpAddress, configurations.PortNumber))
                     {
-                        smtp.UseDefaultCredentials = false;
-                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtp.UseDefaultCredentials = configurations.UseDefaultCredentials;
+                        smtp.DeliveryMethod = configurations.DeliveryMethod;
                         smtp.Credentials = new NetworkCredential(options.From, options.Password);
-                        smtp.EnableSsl = true;
+                        smtp.EnableSsl = configurations.EnableSsl;
 
                         try
                         {
                             smtp.Send(mail);
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             throw;
                         }
                     }
                 }
             }
-            catch (System.Exception)
+            catch (Exception)
             {
 
                 throw;

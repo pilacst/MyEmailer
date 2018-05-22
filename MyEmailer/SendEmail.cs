@@ -9,6 +9,11 @@ namespace MyEmailer
     /// </summary>
     public class SendEmail
     {
+        /// <summary>
+        /// Sends the email with the given configurations and optins.
+        /// </summary>
+        /// <param name="options">MailMessageOptions</param>
+        /// <param name="configurations">SmtpClientConfigurations</param>
         public virtual void Send(MailMessageOptions options, SmtpClientConfigurations configurations)
         {
             try

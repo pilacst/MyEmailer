@@ -18,23 +18,19 @@ namespace MyEmailer.Test
         {
             Options = new MailMessageOptions();
             Configurations = new SmtpClientConfigurations();
-            Options.From = "nayanajith.pilapitiya@gmail.com";
-            Options.Password = "3139808@pila";
-            Options.Subject = "Test"; //subject;
+            Options.From = "sender@gmail.com";
+            Options.Password = "pwd";
+            Options.Subject = "Test";
             Options.Body = "Test";
             Options.IsBodyHtml = true;
             Options.To = new List<string>();
-            Options.To.Add("pilapitiyanss@gmail.com");
+            Options.To.Add("recipient@gmail.com");
 
             Configurations.UseDefaultCredentials = false;
             Configurations.DeliveryMethod = SmtpDeliveryMethod.Network;
             Configurations.SmtpAddress = "smtp.gmail.com";
-            Configurations.EnableSsl = false;
             Configurations.PortNumber = 587;
-            //configurations.Credentials = new NetworkCredential("nayanajith.pilapitiya@gmail.com", "3139808@pila");
-            Configurations.EnableSsl = true;
-
-            
+            Configurations.EnableSsl = true;          
         }
 
         [TestMethod]
